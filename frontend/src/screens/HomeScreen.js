@@ -15,22 +15,22 @@ const FeatureSection = () => (
     <Row className="text-center">
       {[
         {
-          img: '/images/icon/icon-shipping.jpg',
+          img: `${process.env.REACT_APP_API_URL}/images/icon/icon-shipping.jpg`,
           title: 'Miễn phí giao hàng',
           desc: 'Miễn phí vận chuyển tất cả các đơn hàng',
         },
         {
-          img: '/images/icon/icon-support.jpg',
+          img: `${process.env.REACT_APP_API_URL}/images/icon/icon-support.jpg`,
           title: 'Hỗ trợ 24/7',
           desc: 'Liên hệ bất kỳ lúc nào',
         },
         {
-          img: '/images/icon/icon-refund.jpg',
+          img: `${process.env.REACT_APP_API_URL}/images/icon/icon-refund.jpg`,
           title: 'Hoàn tiền 100%',
           desc: 'Bạn có 15 ngày để quay lại',
         },
         {
-          img: '/images/icon/icon-return.png',
+          img: `${process.env.REACT_APP_API_URL}/images/icon/icon-return.png`,
           title: '30 ngày trả hàng',
           desc: 'Nếu sản phẩm có vấn đề',
         },
@@ -108,7 +108,10 @@ const HomeScreen = ({ match }) => {
 
       <Container className="py-4">
         <Row className="justify-content-center">
-          {['/images/banner/img2-middle-sinrato1.jpg', '/images/banner/img1-middle-sinrato1.jpg'].map((img, index) => (
+          {[
+            `${process.env.REACT_APP_API_URL}/images/banner/img2-middle-sinrato1.jpg`,
+            `${process.env.REACT_APP_API_URL}/images/banner/img1-middle-sinrato1.jpg`
+          ].map((img, index) => (
             <Col key={index} md={6} className="text-center">
               <img
                 src={img}
@@ -169,7 +172,7 @@ const HomeScreen = ({ match }) => {
 
       <div className="footer-banner">
         <img
-          src="/images/banner/img-bottom-sinrato1.jpg"
+          src={`${process.env.REACT_APP_API_URL}/images/banner/img-bottom-sinrato1.jpg`}
           alt="Footer Banner"
           style={{
             width: '100%',
