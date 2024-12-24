@@ -48,31 +48,42 @@ const OrderScreen = ({ match, history }) => {
 		)
 	}
 
-	useEffect(() => {
-		const addPayPalScript = async () => {
-			try {
-				const { data } = await axios.get('/api/config/paypal');
-				const script = document.createElement('script');
-				script.type = 'text/javascript';
-				script.src = `https://www.paypal.com/sdk/js?client-id=${data.clientId}&currency=USD`;
-				script.async = true;
-				
-				script.onload = () => {
-					setSdkReady(true);
-				};
-
-				script.onerror = (err) => {
-					console.error('PayPal script loading error:', err);
-					setError('Không thể tải PayPal. Vui lòng thử lại sau.');
-				};
-
-				document.body.appendChild(script);
-			} catch (error) {
-				console.error('Error loading PayPal:', error);
-				setError('Không thể kết nối PayPal. Vui lòng thử lại sau.');
+	const addPayPalScript = async () => {
+		try {
+			const { data: clientId } = await axios.get('/api/config/paypal');
+			
+			// Xóa script cũ nếu có
+			const existingScript = document.getElementById('paypal-script');
+			if (existingScript) {
+				document.body.removeChild(existingScript);
 			}
-		};
 
+			const script = document.createElement('script');
+			script.id = 'paypal-script';
+			script.type = 'text/javascript';
+			script.src = `https://www.paypal.com/sdk/js?client-id=${clientId}&currency=USD`;
+			script.async = true;
+			
+			script.onload = () => {
+				setSdkReady(true);
+				setError(null);
+			};
+
+			script.onerror = (err) => {
+				console.error('PayPal script loading error:', err);
+				setError('Không thể tải PayPal. Vui lòng tải lại trang.');
+				setSdkReady(false);
+			};
+
+			document.body.appendChild(script);
+		} catch (error) {
+			console.error('Error loading PayPal:', error);
+			setError('Không thể kết nối PayPal. Vui lòng kiểm tra kết nối mạng.');
+			setSdkReady(false);
+		}
+	};
+
+	useEffect(() => {
 		if (!order || successPay || order._id !== orderId) {
 			dispatch({ type: ORDER_PAY_RESET });
 			dispatch(getOrderDetails(orderId));
@@ -224,44 +235,17 @@ const OrderScreen = ({ match, history }) => {
 							</ListGroup.Item>
 							{!order.isPaid && (
 								<ListGroup.Item>
-									{loadingPay && (
-										<div style={{
-											textAlign: 'center',
-											margin: 'auto',
-											padding: '20px',
-											display: 'flex',
-											flexDirection: 'column',
-											alignItems: 'center',
-											justifyContent: 'center'
-										}}>
-											<Spinner
-												animation="border"
-												role="status"
-												variant="primary"
-												style={{
-													width: '100px',
-													height: '100px'
-												}}
-											/>
-											<div style={{
-												marginTop: '15px',
-												color: 'var(--bs-primary)',
-												fontSize: '1.2em'
-											}}>
-												<strong>Đang tải PayPal...</strong>
-											</div>
-										</div>
-									)}
-									{error && (
-										<Message variant="danger">{error}</Message>
-									)}
-									{sdkReady && !loadingPay && (
+									{loadingPay && <Loader />}
+									{!sdkReady ? (
+										<Loader />
+									) : (
 										<PayPalButton
 											amount={(order.totalPrice / 23000).toFixed(2)}
+											currency="USD"
 											onSuccess={successPaymentHandler}
 											onError={(err) => {
 												console.error('PayPal Error:', err);
-												setError('Lỗi thanh toán PayPal. Vui lòng thử lại.');
+												setError('Lỗi thanh toán PayPal');
 											}}
 										/>
 									)}

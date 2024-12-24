@@ -32,20 +32,13 @@ app.use('/api/orders', orderRoutes)
 app.use('/api/upload', uploadRoutes)
 
 app.get('/api/config/paypal', (req, res) => {
-	try {
-		if (!process.env.PAYPAL_CLIENT_ID) {
-			throw new Error('PayPal Client ID is not configured');
-		}
-		// Force new response, prevent 304 Not Modified
-		res.set('Cache-Control', 'no-store');
-		res.status(200).json({ clientId: process.env.PAYPAL_CLIENT_ID });
-	} catch (error) {
-		console.error('PayPal config error:', error);
-		res.status(500).json({ 
-			message: 'Error getting PayPal configuration',
-			error: error.message 
+	if (!process.env.PAYPAL_CLIENT_ID) {
+		return res.status(500).json({ 
+			message: 'PayPal Client ID is not configured' 
 		});
 	}
+	// Gửi trực tiếp client ID, không wrap trong object
+	res.send(process.env.PAYPAL_CLIENT_ID);
 });
 
 // Make uploads folder static

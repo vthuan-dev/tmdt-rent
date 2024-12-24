@@ -65,6 +65,13 @@ const updateOrderToPaid = asyncHandler(async (req, res) => {
       });
     }
 
+    // Kiểm tra payment result
+    if (!req.body.id || !req.body.status || !req.body.payer) {
+      return res.status(400).json({
+        message: 'Thông tin thanh toán không hợp lệ'
+      });
+    }
+
     order.isPaid = true;
     order.paidAt = Date.now();
     order.paymentResult = {
@@ -75,13 +82,14 @@ const updateOrderToPaid = asyncHandler(async (req, res) => {
     };
 
     const updatedOrder = await order.save();
+    console.log('Payment successful:', updatedOrder);
     res.json(updatedOrder);
     
   } catch (error) {
-    console.error('Payment update error:', error);
+    console.error('Payment error:', error);
     res.status(500).json({
       message: 'Lỗi cập nhật thanh toán',
-      error: error.message
+      error: error.message 
     });
   }
 });
