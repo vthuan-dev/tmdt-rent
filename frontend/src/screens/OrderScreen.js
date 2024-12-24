@@ -48,35 +48,45 @@ const OrderScreen = ({ match, history }) => {
 	}
 
 	useEffect(() => {
-		const addPayPalScript = async () => {
-			const { data: clientId } = await axios.get('/api/config/paypal')
-			const script = document.createElement('script')
-			script.type = 'text/javascript'
-			script.src = `https://www.paypal.com/sdk/js?client-id=${clientId}`
-			script.async = true
-			script.onload = () => {
-				setSdkReady(true)
-			}
-			document.body.appendChild(script)
+		// Xóa script PayPal cũ nếu có
+		const paypalScript = document.querySelector('script[src*="paypal"]');
+		if (paypalScript) {
+			paypalScript.remove();
+			setSdkReady(false);
 		}
 
-		if (!order || successPay || successDeliver || order._id !== orderId) {
-			dispatch({ type: ORDER_PAY_RESET })
-			dispatch({ type: ORDER_DELIVER_RESET })
-			dispatch(getOrderDetails(orderId))
+		const addPayPalScript = async () => {
+			try {
+				const { data: clientId } = await axios.get('/api/config/paypal');
+				const script = document.createElement('script');
+				script.type = 'text/javascript';
+				script.src = `https://www.paypal.com/sdk/js?client-id=${clientId}&currency=USD`;
+				script.async = true;
+				script.onload = () => {
+					setSdkReady(true);
+				};
+				document.body.appendChild(script);
+			} catch (error) {
+				console.error('PayPal script loading error:', error);
+			}
+		};
+
+		if (!order || successPay || order._id !== orderId) {
+			dispatch({ type: ORDER_PAY_RESET });
+			dispatch(getOrderDetails(orderId));
 		} else if (!order.isPaid) {
 			if (!window.paypal) {
-				addPayPalScript()
+				addPayPalScript();
 			} else {
-				setSdkReady(true)
+				setSdkReady(true);
 			}
 		}
-	}, [dispatch, orderId, successPay, successDeliver, order])
+	}, [dispatch, orderId, successPay, order]);
 
 	const successPaymentHandler = (paymentResult) => {
-		console.log(paymentResult)
-		dispatch(payOrder(orderId, paymentResult))
-	}
+		console.log('Payment Result:', paymentResult);
+		dispatch(payOrder(orderId, paymentResult));
+	};
 
 	const deliverHandler = () => {
 		dispatch(deliverOrder(order))
@@ -221,8 +231,9 @@ const OrderScreen = ({ match, history }) => {
 										<Loader />
 									) : (
 										<PayPalButton
-											amount={order.totalPrice}
+											amount={(order.totalPrice / 23000).toFixed(2)} // Convert VND to USD
 											onSuccess={successPaymentHandler}
+											onError={(err) => console.error('PayPal Error:', err)}
 										/>
 									)}
 								</ListGroup.Item>
