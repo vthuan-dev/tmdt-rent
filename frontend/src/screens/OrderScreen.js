@@ -48,13 +48,13 @@ const OrderScreen = ({ match, history }) => {
 	}
 
 	useEffect(() => {
-		// Xóa script PayPal cũ nếu có
-		const paypalScript = document.querySelector('script[src*="paypal"]');
-		if (paypalScript) {
-			paypalScript.remove();
-			setSdkReady(false);
+		if (!order || successPay || order._id !== orderId) {
+			dispatch({ type: ORDER_PAY_RESET });
+			dispatch(getOrderDetails(orderId));
 		}
+	}, [dispatch, orderId, successPay, order]);
 
+	useEffect(() => {
 		const addPayPalScript = async () => {
 			try {
 				const { data: clientId } = await axios.get('/api/config/paypal');
@@ -67,21 +67,14 @@ const OrderScreen = ({ match, history }) => {
 				};
 				document.body.appendChild(script);
 			} catch (error) {
-				console.error('PayPal script loading error:', error);
+				console.error('PayPal Script Error:', error);
 			}
 		};
 
-		if (!order || successPay || order._id !== orderId) {
-			dispatch({ type: ORDER_PAY_RESET });
-			dispatch(getOrderDetails(orderId));
-		} else if (!order.isPaid) {
-			if (!window.paypal) {
-				addPayPalScript();
-			} else {
-				setSdkReady(true);
-			}
+		if (order && !order.isPaid && !window.paypal) {
+			addPayPalScript();
 		}
-	}, [dispatch, orderId, successPay, order]);
+	}, [order]);
 
 	const successPaymentHandler = (paymentResult) => {
 		console.log('Payment Result:', paymentResult);
@@ -224,16 +217,16 @@ const OrderScreen = ({ match, history }) => {
 									</Col>
 								</Row>
 							</ListGroup.Item>
-							{!order.isPaid && (
+							{!order.isPaid && order.paymentMethod === 'PayPal' && (
 								<ListGroup.Item>
 									{loadingPay && <Loader />}
 									{!sdkReady ? (
 										<Loader />
 									) : (
 										<PayPalButton
-											amount={(order.totalPrice / 23000).toFixed(2)} // Convert VND to USD
-											onSuccess={successPaymentHandler}
-											onError={(err) => console.error('PayPal Error:', err)}
+												amount={(order.totalPrice / 23000).toFixed(2)}
+												onSuccess={successPaymentHandler}
+												onError={(err) => console.error('PayPal Error:', err)}
 										/>
 									)}
 								</ListGroup.Item>
