@@ -1,0 +1,1419 @@
+[{
+  "_id": {
+    "$oid": "6746c6840fc5e327105fee1d"
+  },
+  "taxPrice": 7364.85,
+  "shippingPrice": 0,
+  "totalPrice": 56463.85,
+  "isPaid": true,
+  "isDelivered": true,
+  "orderItems": [
+    {
+      "_id": {
+        "$oid": "6746c6840fc5e327105fee1e"
+      },
+      "product": {
+        "$oid": "6744cc2d31fad549a8b3a201"
+      },
+      "name": "Logitech G-Series Gaming Mouse",
+      "image": "/images/mouse.jpg",
+      "price": "49099",
+      "qty": 1
+    }
+  ],
+  "user": {
+    "$oid": "6744cc2d31fad549a8b3a1f9"
+  },
+  "shippingAddress": {
+    "address": "1",
+    "city": "1",
+    "postalCode": "1",
+    "country": "1"
+  },
+  "paymentMethod": "PayPal",
+  "createdAt": {
+    "$date": "2024-11-27T07:13:08.066Z"
+  },
+  "updatedAt": {
+    "$date": "2024-11-27T07:13:20.041Z"
+  },
+  "__v": 0,
+  "paidAt": {
+    "$date": "2024-11-27T07:13:18.025Z"
+  },
+  "paymentResult": {
+    "id": "5NY24925S9919450T",
+    "status": "COMPLETED",
+    "update_time": "2024-11-27T07:13:18Z",
+    "email_address": "sb-jjyh4334266513@personal.example.com"
+  },
+  "deliveredAt": {
+    "$date": "2024-11-27T07:13:20.041Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6746c73e0fc5e327105fee59"
+  },
+  "taxPrice": 13364.85,
+  "shippingPrice": 0,
+  "totalPrice": 102463.85,
+  "isPaid": false,
+  "isDelivered": false,
+  "orderItems": [
+    {
+      "_id": {
+        "$oid": "6746c73e0fc5e327105fee5a"
+      },
+      "product": {
+        "$oid": "6744cc2d31fad549a8b3a1fd"
+      },
+      "name": "Airpods Wireless Bluetooth Headphones",
+      "image": "/images/airpods.jpg",
+      "price": "89099",
+      "qty": 1
+    }
+  ],
+  "user": {
+    "$oid": "6744cc2d31fad549a8b3a1f9"
+  },
+  "shippingAddress": {
+    "address": "1",
+    "city": "1",
+    "postalCode": "1",
+    "country": "Vietnam"
+  },
+  "paymentMethod": "PayPal",
+  "createdAt": {
+    "$date": "2024-11-27T07:16:14.246Z"
+  },
+  "updatedAt": {
+    "$date": "2024-11-27T07:16:14.246Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6746cd020fc5e327105feeb2"
+  },
+  "taxPrice": 139364.85,
+  "shippingPrice": 0,
+  "totalPrice": 1068463.85,
+  "isPaid": false,
+  "isDelivered": false,
+  "orderItems": [
+    {
+      "_id": {
+        "$oid": "6746cd020fc5e327105feeb3"
+      },
+      "product": {
+        "$oid": "6744cc2d31fad549a8b3a1ff"
+      },
+      "name": "Cannon EOS 80D DSLR Camera",
+      "image": "/images/camera.jpg",
+      "price": "929099",
+      "qty": 1
+    }
+  ],
+  "user": {
+    "$oid": "6744cc2d31fad549a8b3a1f9"
+  },
+  "shippingAddress": {
+    "address": "1",
+    "city": "1",
+    "postalCode": "1",
+    "country": "Vietnam"
+  },
+  "paymentMethod": "PayPal",
+  "createdAt": {
+    "$date": "2024-11-27T07:40:50.735Z"
+  },
+  "updatedAt": {
+    "$date": "2024-11-27T07:40:50.735Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6746d29a0fc5e327105fef2e"
+  },
+  "taxPrice": 152729.7,
+  "shippingPrice": 0,
+  "totalPrice": 1170927.7,
+  "isPaid": false,
+  "isDelivered": false,
+  "orderItems": [
+    {
+      "_id": {
+        "$oid": "6746d29a0fc5e327105fef2f"
+      },
+      "product": {
+        "$oid": "6744cc2d31fad549a8b3a1fd"
+      },
+      "name": "Airpods Wireless Bluetooth Headphones",
+      "image": "/images/airpods.jpg",
+      "price": "89099",
+      "qty": 1
+    },
+    {
+      "_id": {
+        "$oid": "6746d29a0fc5e327105fef30"
+      },
+      "product": {
+        "$oid": "6744cc2d31fad549a8b3a1ff"
+      },
+      "name": "Cannon EOS 80D DSLR Camera",
+      "image": "/images/camera.jpg",
+      "price": "929099",
+      "qty": 1
+    }
+  ],
+  "user": {
+    "$oid": "6744cc2d31fad549a8b3a1f9"
+  },
+  "shippingAddress": {
+    "address": "1",
+    "city": "1",
+    "postalCode": "1",
+    "country": "Vietnam"
+  },
+  "paymentMethod": "PayPal",
+  "createdAt": {
+    "$date": "2024-11-27T08:04:42.601Z"
+  },
+  "updatedAt": {
+    "$date": "2024-11-27T08:04:42.601Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6746d43e0fc5e327105fef8e"
+  },
+  "taxPrice": 1851.75,
+  "shippingPrice": 0,
+  "totalPrice": 14196.75,
+  "isPaid": false,
+  "isDelivered": false,
+  "orderItems": [
+    {
+      "_id": {
+        "$oid": "6746d43e0fc5e327105fef8f"
+      },
+      "product": {
+        "$oid": "6744cc2d31fad549a8b3a1fd"
+      },
+      "name": "Airpods Wireless Bluetooth Headphones",
+      "image": "/images/airpods.jpg",
+      "price": "12345",
+      "qty": 1
+    }
+  ],
+  "user": {
+    "$oid": "6744cc2d31fad549a8b3a1f9"
+  },
+  "shippingAddress": {
+    "address": "1",
+    "city": "1",
+    "postalCode": "1",
+    "country": "Vietnam"
+  },
+  "paymentMethod": "PayPal",
+  "createdAt": {
+    "$date": "2024-11-27T08:11:42.051Z"
+  },
+  "updatedAt": {
+    "$date": "2024-11-27T08:11:42.051Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6746d4b30fc5e327105fefaf"
+  },
+  "taxPrice": 1851.75,
+  "shippingPrice": 0,
+  "totalPrice": 14196.75,
+  "isPaid": false,
+  "isDelivered": false,
+  "orderItems": [
+    {
+      "_id": {
+        "$oid": "6746d4b30fc5e327105fefb0"
+      },
+      "product": {
+        "$oid": "6744cc2d31fad549a8b3a1fd"
+      },
+      "name": "Airpods Wireless Bluetooth Headphones",
+      "image": "/images/airpods.jpg",
+      "price": "12345",
+      "qty": 1
+    }
+  ],
+  "user": {
+    "$oid": "6746d2d40fc5e327105fef3b"
+  },
+  "shippingAddress": {
+    "address": "1",
+    "city": "1",
+    "postalCode": "1",
+    "country": "Vietnam"
+  },
+  "paymentMethod": "PayPal",
+  "createdAt": {
+    "$date": "2024-11-27T08:13:39.456Z"
+  },
+  "updatedAt": {
+    "$date": "2024-11-27T08:13:39.456Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "675aedc51dd7333ba80064e1"
+  },
+  "taxPrice": 1851.75,
+  "shippingPrice": 0,
+  "totalPrice": 14196.75,
+  "isPaid": true,
+  "isDelivered": true,
+  "orderItems": [
+    {
+      "_id": {
+        "$oid": "675aedc51dd7333ba80064e2"
+      },
+      "product": {
+        "$oid": "6744cc2d31fad549a8b3a1fd"
+      },
+      "name": "Airpods Wireless Bluetooth Headphones",
+      "image": "/images/airpods.jpg",
+      "price": "12345",
+      "qty": 1
+    }
+  ],
+  "user": {
+    "$oid": "6744cc2d31fad549a8b3a1f9"
+  },
+  "shippingAddress": {
+    "address": "1",
+    "city": "1",
+    "postalCode": "1",
+    "country": "Vietnam"
+  },
+  "paymentMethod": "PayPal",
+  "createdAt": {
+    "$date": "2024-12-12T14:05:57.584Z"
+  },
+  "updatedAt": {
+    "$date": "2024-12-12T14:06:20.023Z"
+  },
+  "__v": 0,
+  "paidAt": {
+    "$date": "2024-12-12T14:06:14.028Z"
+  },
+  "paymentResult": {
+    "id": "5MC27013MD041334B",
+    "status": "COMPLETED",
+    "update_time": "2024-12-12T14:06:12Z",
+    "email_address": "sb-jjyh4334266513@personal.example.com"
+  },
+  "deliveredAt": {
+    "$date": "2024-12-12T14:06:20.020Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "675af00b1dd7333ba8006503"
+  },
+  "taxPrice": 1851.75,
+  "shippingPrice": 0,
+  "totalPrice": 14196.75,
+  "isPaid": false,
+  "isDelivered": false,
+  "orderItems": [
+    {
+      "_id": {
+        "$oid": "675af00b1dd7333ba8006504"
+      },
+      "product": {
+        "$oid": "6744cc2d31fad549a8b3a1fe"
+      },
+      "name": "iPhone 11 Pro 256GB Memory",
+      "image": "/images/phone.jpg",
+      "price": "12345",
+      "qty": 1
+    }
+  ],
+  "user": {
+    "$oid": "6744cc2d31fad549a8b3a1f9"
+  },
+  "shippingAddress": {
+    "address": "1",
+    "city": "1",
+    "postalCode": "1",
+    "country": "Vietnam"
+  },
+  "paymentMethod": "PayPal",
+  "createdAt": {
+    "$date": "2024-12-12T14:15:39.201Z"
+  },
+  "updatedAt": {
+    "$date": "2024-12-12T14:15:39.201Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67655535e4f34725ac14503d"
+  },
+  "taxPrice": 3703.5,
+  "shippingPrice": 0,
+  "totalPrice": 28393.5,
+  "isPaid": false,
+  "isDelivered": false,
+  "orderItems": [
+    {
+      "_id": {
+        "$oid": "67655535e4f34725ac14503e"
+      },
+      "product": {
+        "$oid": "6744cc2d31fad549a8b3a1fd"
+      },
+      "name": "Airpods Wireless Bluetooth Headphones",
+      "image": "/images/airpods.jpg",
+      "price": "12345",
+      "qty": 1
+    },
+    {
+      "_id": {
+        "$oid": "67655535e4f34725ac14503f"
+      },
+      "product": {
+        "$oid": "6744cc2d31fad549a8b3a1fe"
+      },
+      "name": "iPhone 11 Pro 256GB Memory",
+      "image": "/images/phone.jpg",
+      "price": "12345",
+      "qty": 1
+    }
+  ],
+  "user": {
+    "$oid": "6744cc2d31fad549a8b3a1f9"
+  },
+  "shippingAddress": {
+    "address": "1",
+    "city": "1",
+    "postalCode": "1",
+    "country": "1"
+  },
+  "paymentMethod": "PayPal",
+  "createdAt": {
+    "$date": "2024-12-20T11:29:57.192Z"
+  },
+  "updatedAt": {
+    "$date": "2024-12-20T11:29:57.192Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6765a67bdb650e5748fc5d4d"
+  },
+  "taxPrice": 1851.75,
+  "shippingPrice": 0,
+  "totalPrice": 14196.75,
+  "isPaid": false,
+  "isDelivered": false,
+  "orderItems": [
+    {
+      "_id": {
+        "$oid": "6765a67bdb650e5748fc5d4e"
+      },
+      "product": {
+        "$oid": "6744cc2d31fad549a8b3a1fe"
+      },
+      "name": "iPhone 11 Pro 256GB Memory",
+      "image": "/images/phone.jpg",
+      "price": "12345",
+      "qty": 1
+    }
+  ],
+  "user": {
+    "$oid": "6744cc2d31fad549a8b3a1f9"
+  },
+  "shippingAddress": {
+    "address": "1",
+    "city": "1",
+    "postalCode": "1",
+    "country": "1"
+  },
+  "paymentMethod": "PayPal",
+  "createdAt": {
+    "$date": "2024-12-20T17:16:43.687Z"
+  },
+  "updatedAt": {
+    "$date": "2024-12-20T17:16:43.687Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6765c121608daa562c03e86d"
+  },
+  "taxPrice": 7407,
+  "shippingPrice": 0,
+  "totalPrice": 56787,
+  "isPaid": false,
+  "isDelivered": false,
+  "orderItems": [
+    {
+      "_id": {
+        "$oid": "6765c121608daa562c03e86e"
+      },
+      "product": {
+        "$oid": "6744cc2d31fad549a8b3a1fd"
+      },
+      "name": "Airpods Wireless Bluetooth Headphones",
+      "image": "/uploads\\image-1734719688178.jpg",
+      "price": "12345",
+      "qty": 3
+    },
+    {
+      "_id": {
+        "$oid": "6765c121608daa562c03e86f"
+      },
+      "product": {
+        "$oid": "6744cc2d31fad549a8b3a1fe"
+      },
+      "name": "iPhone 11 Pro 256GB Memory",
+      "image": "/uploads\\image-1734719710029.jpg",
+      "price": "12345",
+      "qty": 1
+    }
+  ],
+  "user": {
+    "$oid": "6744cc2d31fad549a8b3a1f9"
+  },
+  "shippingAddress": {
+    "address": "234",
+    "city": "32423",
+    "postalCode": "5235",
+    "country": "24234"
+  },
+  "paymentMethod": "PayPal",
+  "createdAt": {
+    "$date": "2024-12-20T19:10:25.521Z"
+  },
+  "updatedAt": {
+    "$date": "2024-12-20T19:10:25.521Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6765d2304ac59e5798bb8dff"
+  },
+  "taxPrice": 1851.75,
+  "shippingPrice": 0,
+  "totalPrice": 14196.75,
+  "isPaid": false,
+  "isDelivered": false,
+  "orderItems": [
+    {
+      "_id": {
+        "$oid": "6765d2304ac59e5798bb8e00"
+      },
+      "product": {
+        "$oid": "6744cc2d31fad549a8b3a1fe"
+      },
+      "name": "iPhone 11 Pro 256GB Memory",
+      "image": "/uploads\\image-1734719710029.jpg",
+      "price": "12345",
+      "qty": 1
+    }
+  ],
+  "user": {
+    "$oid": "6765c7011f1a0038a0c4700a"
+  },
+  "shippingAddress": {
+    "address": "1",
+    "city": "1",
+    "postalCode": "1",
+    "country": "1"
+  },
+  "paymentMethod": "PayPal",
+  "createdAt": {
+    "$date": "2024-12-20T20:23:12.294Z"
+  },
+  "updatedAt": {
+    "$date": "2024-12-20T20:23:12.294Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67668fbf620cc11b98744a70"
+  },
+  "taxPrice": 1851.75,
+  "shippingPrice": 0,
+  "totalPrice": 14196.75,
+  "isPaid": false,
+  "isDelivered": false,
+  "orderItems": [
+    {
+      "_id": {
+        "$oid": "67668fbf620cc11b98744a71"
+      },
+      "product": {
+        "$oid": "6744cc2d31fad549a8b3a1fe"
+      },
+      "name": "iPhone 11 Pro 256GB Memory",
+      "image": "/uploads\\image-1734719710029.jpg",
+      "price": "12345",
+      "qty": 1
+    }
+  ],
+  "user": {
+    "$oid": "6765c7011f1a0038a0c4700a"
+  },
+  "shippingAddress": {
+    "address": "1",
+    "city": "1",
+    "postalCode": "1",
+    "country": "1"
+  },
+  "paymentMethod": "PayPal",
+  "createdAt": {
+    "$date": "2024-12-21T09:51:59.410Z"
+  },
+  "updatedAt": {
+    "$date": "2024-12-21T09:51:59.410Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6766eb3a6a30583d280f78bc"
+  },
+  "taxPrice": 3748500,
+  "shippingPrice": 0,
+  "totalPrice": 28738500,
+  "isPaid": false,
+  "isDelivered": false,
+  "orderItems": [
+    {
+      "_id": {
+        "$oid": "6766eb3a6a30583d280f78bd"
+      },
+      "product": {
+        "$oid": "6744cc2d31fad549a8b3a1fd"
+      },
+      "name": "Apple MacBook Air M1",
+      "image": "/uploads\\image-1734719688178.jpg",
+      "price": "24990000",
+      "qty": 1
+    }
+  ],
+  "user": {
+    "$oid": "6744cc2d31fad549a8b3a1f9"
+  },
+  "shippingAddress": {
+    "address": "1",
+    "city": "1",
+    "postalCode": "1",
+    "country": "1"
+  },
+  "paymentMethod": "PayPal",
+  "createdAt": {
+    "$date": "2024-12-21T16:22:18.045Z"
+  },
+  "updatedAt": {
+    "$date": "2024-12-21T16:22:18.045Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6766f70715cefe12e8cc8aff"
+  },
+  "taxPrice": 18966000,
+  "shippingPrice": 0,
+  "totalPrice": 145406000,
+  "isPaid": false,
+  "isDelivered": false,
+  "orderItems": [
+    {
+      "_id": {
+        "$oid": "6766f70715cefe12e8cc8b00"
+      },
+      "product": {
+        "$oid": "6744cc2d31fad549a8b3a1fe"
+      },
+      "name": "Sony WH-CH510 Wireless Headphones",
+      "image": "/uploads\\image-1734719710029.jpg",
+      "price": "1490000",
+      "qty": 1
+    },
+    {
+      "_id": {
+        "$oid": "6766f70715cefe12e8cc8b01"
+      },
+      "product": {
+        "$oid": "6744cc2d31fad549a8b3a1fd"
+      },
+      "name": "Apple MacBook Air M1",
+      "image": "/uploads\\image-1734719688178.jpg",
+      "price": "24990000",
+      "qty": 5
+    }
+  ],
+  "user": {
+    "$oid": "6744cc2d31fad549a8b3a1f9"
+  },
+  "shippingAddress": {
+    "address": "1",
+    "city": "1",
+    "postalCode": "1",
+    "country": "1"
+  },
+  "paymentMethod": "COD",
+  "createdAt": {
+    "$date": "2024-12-21T17:12:39.984Z"
+  },
+  "updatedAt": {
+    "$date": "2024-12-21T17:12:39.984Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6768318dfc215a4b88424aef"
+  },
+  "taxPrice": 2250000,
+  "shippingPrice": 0,
+  "totalPrice": 17250000,
+  "isPaid": false,
+  "isDelivered": false,
+  "orderItems": [
+    {
+      "_id": {
+        "$oid": "6768318dfc215a4b88424af0"
+      },
+      "product": {
+        "$oid": "6765b939f55a352714c9a290"
+      },
+      "name": "Dyson Pure Cool Air Purifier",
+      "image": "/uploads\\image-1734719805812.jpg",
+      "price": 15000000,
+      "qty": 1
+    }
+  ],
+  "user": {
+    "$oid": "67682efb4b2b1939784c7764"
+  },
+  "shippingAddress": {
+    "address": "1",
+    "city": "1",
+    "postalCode": "1",
+    "country": "1"
+  },
+  "paymentMethod": "PayPal",
+  "createdAt": {
+    "$date": "2024-12-22T15:34:37.246Z"
+  },
+  "updatedAt": {
+    "$date": "2024-12-22T15:34:37.246Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "676833034b52ae490460145d"
+  },
+  "taxPrice": 150000,
+  "shippingPrice": 0,
+  "totalPrice": 1150000,
+  "isPaid": true,
+  "isDelivered": true,
+  "orderItems": [
+    {
+      "_id": {
+        "$oid": "676833034b52ae490460145e"
+      },
+      "product": {
+        "$oid": "6744cc2d31fad549a8b3a1ff"
+      },
+      "name": "Apple Watch Series 8",
+      "image": "/uploads\\image-1734719729726.jpg",
+      "price": 1000000,
+      "qty": 1
+    }
+  ],
+  "user": {
+    "$oid": "67682efb4b2b1939784c7764"
+  },
+  "shippingAddress": {
+    "address": "1",
+    "city": "1",
+    "postalCode": "1",
+    "country": "1"
+  },
+  "paymentMethod": "PayPal",
+  "createdAt": {
+    "$date": "2024-12-22T15:40:51.080Z"
+  },
+  "updatedAt": {
+    "$date": "2024-12-22T15:42:04.968Z"
+  },
+  "__v": 0,
+  "paidAt": {
+    "$date": "2024-12-22T15:41:04.041Z"
+  },
+  "paymentResult": {
+    "id": "639210358J328791T",
+    "status": "COMPLETED",
+    "update_time": "2024-12-22T15:41:04Z",
+    "email_address": "sb-lgnfs35228319@personal.example.com"
+  },
+  "deliveredAt": {
+    "$date": "2024-12-22T15:42:04.965Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "676851c54b52ae490460149c"
+  },
+  "taxPrice": 223500,
+  "shippingPrice": 0,
+  "totalPrice": 1713500,
+  "isPaid": true,
+  "isDelivered": true,
+  "orderItems": [
+    {
+      "_id": {
+        "$oid": "676851c54b52ae490460149d"
+      },
+      "product": {
+        "$oid": "6744cc2d31fad549a8b3a1fe"
+      },
+      "name": "Sony WH-CH510 Wireless Headphones",
+      "image": "/uploads\\image-1734719710029.jpg",
+      "price": 1490000,
+      "qty": 1
+    }
+  ],
+  "user": {
+    "$oid": "6744cc2d31fad549a8b3a1f9"
+  },
+  "shippingAddress": {
+    "address": "2",
+    "city": "2",
+    "postalCode": "2",
+    "country": "2"
+  },
+  "paymentMethod": "PayPal",
+  "createdAt": {
+    "$date": "2024-12-22T17:52:05.221Z"
+  },
+  "updatedAt": {
+    "$date": "2024-12-22T17:52:47.448Z"
+  },
+  "__v": 0,
+  "paidAt": {
+    "$date": "2024-12-22T17:52:41.472Z"
+  },
+  "paymentResult": {
+    "id": "9CJ24091DG284163N",
+    "status": "COMPLETED",
+    "update_time": "2024-12-22T17:52:40Z",
+    "email_address": "sb-lgnfs35228319@personal.example.com"
+  },
+  "deliveredAt": {
+    "$date": "2024-12-22T17:52:47.446Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "676852044b52ae49046014b9"
+  },
+  "taxPrice": 3748500,
+  "shippingPrice": 0,
+  "totalPrice": 28738500,
+  "isPaid": true,
+  "isDelivered": true,
+  "orderItems": [
+    {
+      "_id": {
+        "$oid": "676852044b52ae49046014ba"
+      },
+      "product": {
+        "$oid": "6744cc2d31fad549a8b3a1fd"
+      },
+      "name": "Apple MacBook Air M1",
+      "image": "/uploads\\image-1734719688178.jpg",
+      "price": 24990000,
+      "qty": 1
+    }
+  ],
+  "user": {
+    "$oid": "6744cc2d31fad549a8b3a1f9"
+  },
+  "shippingAddress": {
+    "address": "2",
+    "city": "2",
+    "postalCode": "2",
+    "country": "2"
+  },
+  "paymentMethod": "PayPal",
+  "createdAt": {
+    "$date": "2024-12-22T17:53:08.733Z"
+  },
+  "updatedAt": {
+    "$date": "2024-12-22T17:53:22.266Z"
+  },
+  "__v": 0,
+  "paidAt": {
+    "$date": "2024-12-22T17:53:19.875Z"
+  },
+  "paymentResult": {
+    "id": "3KT78063PW1293014",
+    "status": "COMPLETED",
+    "update_time": "2024-12-22T17:53:19Z",
+    "email_address": "sb-lgnfs35228319@personal.example.com"
+  },
+  "deliveredAt": {
+    "$date": "2024-12-22T17:53:22.265Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "676853e588f0f1348422bafc"
+  },
+  "taxPrice": 3748500,
+  "shippingPrice": 0,
+  "totalPrice": 28738500,
+  "isPaid": true,
+  "isDelivered": true,
+  "orderItems": [
+    {
+      "_id": {
+        "$oid": "676853e588f0f1348422bafd"
+      },
+      "product": {
+        "$oid": "6744cc2d31fad549a8b3a1fd"
+      },
+      "name": "Apple MacBook Air M1",
+      "image": "/uploads\\image-1734719688178.jpg",
+      "price": 24990000,
+      "qty": 1
+    }
+  ],
+  "user": {
+    "$oid": "6744cc2d31fad549a8b3a1f9"
+  },
+  "shippingAddress": {
+    "address": "2",
+    "city": "2",
+    "postalCode": "2",
+    "country": "2"
+  },
+  "paymentMethod": "PayPal",
+  "createdAt": {
+    "$date": "2024-12-22T18:01:09.113Z"
+  },
+  "updatedAt": {
+    "$date": "2024-12-22T18:01:20.852Z"
+  },
+  "__v": 0,
+  "paidAt": {
+    "$date": "2024-12-22T18:01:19.180Z"
+  },
+  "paymentResult": {
+    "id": "4R014923J1851203S",
+    "status": "COMPLETED",
+    "update_time": "2024-12-22T18:01:18Z",
+    "email_address": "sb-lgnfs35228319@personal.example.com"
+  },
+  "deliveredAt": {
+    "$date": "2024-12-22T18:01:20.850Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6768542788f0f1348422bb21"
+  },
+  "taxPrice": 3748500,
+  "shippingPrice": 0,
+  "totalPrice": 28738500,
+  "isPaid": true,
+  "isDelivered": false,
+  "orderItems": [
+    {
+      "_id": {
+        "$oid": "6768542788f0f1348422bb22"
+      },
+      "product": {
+        "$oid": "6744cc2d31fad549a8b3a1fd"
+      },
+      "name": "Apple MacBook Air M1",
+      "image": "/uploads\\image-1734719688178.jpg",
+      "price": 24990000,
+      "qty": 1
+    }
+  ],
+  "user": {
+    "$oid": "6744cc2d31fad549a8b3a1f9"
+  },
+  "shippingAddress": {
+    "address": "2",
+    "city": "2",
+    "postalCode": "2",
+    "country": "2"
+  },
+  "paymentMethod": "PayPal",
+  "createdAt": {
+    "$date": "2024-12-22T18:02:15.262Z"
+  },
+  "updatedAt": {
+    "$date": "2024-12-22T18:02:29.511Z"
+  },
+  "__v": 0,
+  "paidAt": {
+    "$date": "2024-12-22T18:02:29.503Z"
+  },
+  "paymentResult": {
+    "id": "4BR2839258849870R",
+    "status": "COMPLETED",
+    "update_time": "2024-12-22T18:02:28Z",
+    "email_address": "sb-lgnfs35228319@personal.example.com"
+  }
+},
+{
+  "_id": {
+    "$oid": "6768545988f0f1348422bb3c"
+  },
+  "taxPrice": 3748500,
+  "shippingPrice": 0,
+  "totalPrice": 28738500,
+  "isPaid": true,
+  "isDelivered": false,
+  "orderItems": [
+    {
+      "_id": {
+        "$oid": "6768545988f0f1348422bb3d"
+      },
+      "product": {
+        "$oid": "6744cc2d31fad549a8b3a1fd"
+      },
+      "name": "Apple MacBook Air M1",
+      "image": "/uploads\\image-1734719688178.jpg",
+      "price": 24990000,
+      "qty": 1
+    }
+  ],
+  "user": {
+    "$oid": "6744cc2d31fad549a8b3a1f9"
+  },
+  "shippingAddress": {
+    "address": "2",
+    "city": "2",
+    "postalCode": "2",
+    "country": "2"
+  },
+  "paymentMethod": "PayPal",
+  "createdAt": {
+    "$date": "2024-12-22T18:03:05.349Z"
+  },
+  "updatedAt": {
+    "$date": "2024-12-22T18:03:16.807Z"
+  },
+  "__v": 0,
+  "paidAt": {
+    "$date": "2024-12-22T18:03:16.798Z"
+  },
+  "paymentResult": {
+    "id": "60889889SC9586336",
+    "status": "COMPLETED",
+    "update_time": "2024-12-22T18:03:15Z",
+    "email_address": "sb-lgnfs35228319@personal.example.com"
+  }
+},
+{
+  "_id": {
+    "$oid": "676854cd88f0f1348422bb57"
+  },
+  "taxPrice": 7497000,
+  "shippingPrice": 0,
+  "totalPrice": 57477000,
+  "isPaid": true,
+  "isDelivered": false,
+  "orderItems": [
+    {
+      "_id": {
+        "$oid": "676854cd88f0f1348422bb58"
+      },
+      "product": {
+        "$oid": "6744cc2d31fad549a8b3a1fd"
+      },
+      "name": "Apple MacBook Air M1",
+      "image": "/uploads\\image-1734719688178.jpg",
+      "price": 24990000,
+      "qty": 2
+    }
+  ],
+  "user": {
+    "$oid": "6744cc2d31fad549a8b3a1f9"
+  },
+  "shippingAddress": {
+    "address": "2",
+    "city": "2",
+    "postalCode": "2",
+    "country": "2"
+  },
+  "paymentMethod": "PayPal",
+  "createdAt": {
+    "$date": "2024-12-22T18:05:01.985Z"
+  },
+  "updatedAt": {
+    "$date": "2024-12-22T18:05:14.766Z"
+  },
+  "__v": 0,
+  "paidAt": {
+    "$date": "2024-12-22T18:05:14.757Z"
+  },
+  "paymentResult": {
+    "id": "31D46986WL7513315",
+    "status": "COMPLETED",
+    "update_time": "2024-12-22T18:05:14Z",
+    "email_address": "sb-lgnfs35228319@personal.example.com"
+  }
+},
+{
+  "_id": {
+    "$oid": "67685570cff14d3bd8ef4bcd"
+  },
+  "taxPrice": 3748500,
+  "shippingPrice": 0,
+  "totalPrice": 28738500,
+  "isPaid": true,
+  "isDelivered": false,
+  "orderItems": [
+    {
+      "_id": {
+        "$oid": "67685570cff14d3bd8ef4bce"
+      },
+      "product": {
+        "$oid": "6744cc2d31fad549a8b3a1fd"
+      },
+      "name": "Apple MacBook Air M1",
+      "image": "/uploads\\image-1734719688178.jpg",
+      "price": 24990000,
+      "qty": 1
+    }
+  ],
+  "user": {
+    "$oid": "6744cc2d31fad549a8b3a1f9"
+  },
+  "shippingAddress": {
+    "address": "2",
+    "city": "2",
+    "postalCode": "2",
+    "country": "2"
+  },
+  "paymentMethod": "PayPal",
+  "createdAt": {
+    "$date": "2024-12-22T18:07:44.419Z"
+  },
+  "updatedAt": {
+    "$date": "2024-12-22T18:07:56.127Z"
+  },
+  "__v": 0,
+  "paidAt": {
+    "$date": "2024-12-22T18:07:56.125Z"
+  },
+  "paymentResult": {
+    "id": "0B1774242V7844648",
+    "status": "COMPLETED",
+    "update_time": "2024-12-22T18:07:55Z",
+    "email_address": "sb-lgnfs35228319@personal.example.com"
+  }
+},
+{
+  "_id": {
+    "$oid": "676856e1399ee23268bb7d78"
+  },
+  "taxPrice": 3748500,
+  "shippingPrice": 0,
+  "totalPrice": 28738500,
+  "isPaid": false,
+  "isDelivered": false,
+  "orderItems": [
+    {
+      "_id": {
+        "$oid": "676856e1399ee23268bb7d79"
+      },
+      "product": {
+        "$oid": "6744cc2d31fad549a8b3a1fd"
+      },
+      "name": "Apple MacBook Air M1",
+      "image": "/uploads\\image-1734719688178.jpg",
+      "price": 24990000,
+      "qty": 1
+    }
+  ],
+  "user": {
+    "$oid": "6744cc2d31fad549a8b3a1f9"
+  },
+  "shippingAddress": {
+    "address": "2",
+    "city": "2",
+    "postalCode": "2",
+    "country": "2"
+  },
+  "paymentMethod": "PayPal",
+  "createdAt": {
+    "$date": "2024-12-22T18:13:53.019Z"
+  },
+  "updatedAt": {
+    "$date": "2024-12-22T18:13:53.019Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67694e9d48eaa13f80a15ca2"
+  },
+  "taxPrice": 223500,
+  "shippingPrice": 0,
+  "totalPrice": 1713500,
+  "isPaid": true,
+  "isDelivered": true,
+  "orderItems": [
+    {
+      "_id": {
+        "$oid": "67694e9d48eaa13f80a15ca3"
+      },
+      "product": {
+        "$oid": "6744cc2d31fad549a8b3a1fe"
+      },
+      "name": "Sony WH-CH510 Wireless Headphones",
+      "image": "/uploads\\image-1734719710029.jpg",
+      "price": 1490000,
+      "qty": 1
+    }
+  ],
+  "user": {
+    "$oid": "6744cc2d31fad549a8b3a1f9"
+  },
+  "shippingAddress": {
+    "address": "1",
+    "city": "1",
+    "postalCode": "1",
+    "country": "1"
+  },
+  "paymentMethod": "PayPal",
+  "createdAt": {
+    "$date": "2024-12-23T11:50:53.501Z"
+  },
+  "updatedAt": {
+    "$date": "2024-12-23T11:51:24.094Z"
+  },
+  "__v": 0,
+  "paidAt": {
+    "$date": "2024-12-23T11:51:20.974Z"
+  },
+  "paymentResult": {
+    "id": "53T48026A0506824H",
+    "status": "COMPLETED",
+    "update_time": "2024-12-23T11:51:20Z",
+    "email_address": "sb-lgnfs35228319@personal.example.com"
+  },
+  "deliveredAt": {
+    "$date": "2024-12-23T11:51:24.091Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67696b47ece2983444b051c9"
+  },
+  "taxPrice": 223500,
+  "shippingPrice": 0,
+  "totalPrice": 1713500,
+  "isPaid": false,
+  "isDelivered": false,
+  "orderItems": [
+    {
+      "_id": {
+        "$oid": "67696b47ece2983444b051ca"
+      },
+      "product": {
+        "$oid": "6744cc2d31fad549a8b3a1fe"
+      },
+      "name": "Sony WH-CH510 Wireless Headphones",
+      "image": "/uploads\\image-1734719710029.jpg",
+      "price": 1490000,
+      "qty": 1
+    }
+  ],
+  "user": {
+    "$oid": "6744cc2d31fad549a8b3a1f9"
+  },
+  "shippingAddress": {
+    "address": "1",
+    "city": "1",
+    "postalCode": "1",
+    "country": "1"
+  },
+  "paymentMethod": "PayPal",
+  "createdAt": {
+    "$date": "2024-12-23T13:53:11.985Z"
+  },
+  "updatedAt": {
+    "$date": "2024-12-23T13:53:11.985Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67696c66db8aab4de06a1185"
+  },
+  "taxPrice": 3972000,
+  "shippingPrice": 0,
+  "totalPrice": 30452000,
+  "isPaid": false,
+  "isDelivered": false,
+  "orderItems": [
+    {
+      "_id": {
+        "$oid": "67696c66db8aab4de06a1186"
+      },
+      "product": {
+        "$oid": "6744cc2d31fad549a8b3a1fe"
+      },
+      "name": "Sony WH-CH510 Wireless Headphones",
+      "image": "/uploads\\image-1734719710029.jpg",
+      "price": 1490000,
+      "qty": 1
+    },
+    {
+      "_id": {
+        "$oid": "67696c66db8aab4de06a1187"
+      },
+      "product": {
+        "$oid": "6744cc2d31fad549a8b3a1fd"
+      },
+      "name": "Apple MacBook Air M1",
+      "image": "/uploads\\image-1734719688178.jpg",
+      "price": 24990000,
+      "qty": 1
+    }
+  ],
+  "user": {
+    "$oid": "6744cc2d31fad549a8b3a1f9"
+  },
+  "shippingAddress": {
+    "address": "1",
+    "city": "1",
+    "postalCode": "1",
+    "country": "1"
+  },
+  "paymentMethod": "PayPal",
+  "createdAt": {
+    "$date": "2024-12-23T13:57:58.462Z"
+  },
+  "updatedAt": {
+    "$date": "2024-12-23T13:57:58.462Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67696cf4bccaf1270c17e885"
+  },
+  "taxPrice": 3748500,
+  "shippingPrice": 0,
+  "totalPrice": 28738500,
+  "isPaid": true,
+  "isDelivered": false,
+  "orderItems": [
+    {
+      "_id": {
+        "$oid": "67696cf4bccaf1270c17e886"
+      },
+      "product": {
+        "$oid": "6744cc2d31fad549a8b3a1fd"
+      },
+      "name": "Apple MacBook Air M1",
+      "image": "/uploads\\image-1734719688178.jpg",
+      "price": 24990000,
+      "qty": 1
+    }
+  ],
+  "user": {
+    "$oid": "6744cc2d31fad549a8b3a1f9"
+  },
+  "shippingAddress": {
+    "address": "1",
+    "city": "1",
+    "postalCode": "1",
+    "country": "1"
+  },
+  "paymentMethod": "PayPal",
+  "createdAt": {
+    "$date": "2024-12-23T14:00:20.421Z"
+  },
+  "updatedAt": {
+    "$date": "2024-12-23T14:00:48.769Z"
+  },
+  "__v": 0,
+  "paidAt": {
+    "$date": "2024-12-23T14:00:48.766Z"
+  },
+  "paymentResult": {
+    "id": "62U04958JK204505P",
+    "status": "COMPLETED",
+    "update_time": "2024-12-23T14:00:48Z",
+    "email_address": "sb-lgnfs35228319@personal.example.com"
+  }
+},
+{
+  "_id": {
+    "$oid": "67696db28fc92e2f104eba51"
+  },
+  "taxPrice": 3748500,
+  "shippingPrice": 0,
+  "totalPrice": 28738500,
+  "isPaid": false,
+  "isDelivered": false,
+  "orderItems": [
+    {
+      "_id": {
+        "$oid": "67696db28fc92e2f104eba52"
+      },
+      "product": {
+        "$oid": "6744cc2d31fad549a8b3a1fd"
+      },
+      "name": "Apple MacBook Air M1",
+      "image": "/uploads\\image-1734719688178.jpg",
+      "price": 24990000,
+      "qty": 1
+    }
+  ],
+  "user": {
+    "$oid": "6744cc2d31fad549a8b3a1f9"
+  },
+  "shippingAddress": {
+    "address": "1",
+    "city": "1",
+    "postalCode": "1",
+    "country": "1"
+  },
+  "paymentMethod": "PayPal",
+  "createdAt": {
+    "$date": "2024-12-23T14:03:30.604Z"
+  },
+  "updatedAt": {
+    "$date": "2024-12-23T14:03:30.604Z"
+  },
+  "__v": 0
+}]
