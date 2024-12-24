@@ -15,22 +15,22 @@ const FeatureSection = () => (
     <Row className="text-center">
       {[
         {
-          img: '/images/icon/icon-shipping.jpg',
+          img: 'https://cdn-icons-png.flaticon.com/512/5952/5952766.png',
           title: 'Miễn phí giao hàng',
           desc: 'Miễn phí vận chuyển tất cả các đơn hàng',
         },
         {
-          img: '/images/icon/icon-support.jpg',
+          img: 'https://www.svgrepo.com/show/192522/customer-service-support.svg',
           title: 'Hỗ trợ 24/7',
           desc: 'Liên hệ bất kỳ lúc nào',
         },
         {
-          img: '/images/icon/icon-refund.jpg',
+          img: 'https://cdn-icons-png.freepik.com/256/11521/11521933.png?semt=ais_hybrid',
           title: 'Hoàn tiền 100%',
           desc: 'Bạn có 15 ngày để quay lại',
         },
         {
-          img: '/images/icon/icon-return.png',
+          img: 'https://e7.pngegg.com/pngimages/87/519/png-clipart-product-return-business-logistics-computer-icons-business-text-trademark-thumbnail.png',
           title: '30 ngày trả hàng',
           desc: 'Nếu sản phẩm có vấn đề',
         },
