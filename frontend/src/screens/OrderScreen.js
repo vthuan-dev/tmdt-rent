@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import { PayPalButton } from 'react-paypal-button-v2'
 import { Link } from 'react-router-dom'
-import { Button, Row, Col, ListGroup, Image, Card, Spinner } from 'react-bootstrap'
+import { Button, Row, Col, ListGroup, Image, Card } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
 import Message from '../components/Message'
 import Loader from '../components/Loader'
@@ -16,11 +16,10 @@ import {
 	ORDER_DELIVER_RESET,
 } from '../constants/orderConstants'
 
-const OrderScreen = ({ match, history }) => {
+const OrderScreen = ({ match }) => {
 	const orderId = match.params.id
 
 	const [sdkReady, setSdkReady] = useState(false)
-	const [error, setError] = useState(null)
 
 	const dispatch = useDispatch()
 
@@ -48,54 +47,38 @@ const OrderScreen = ({ match, history }) => {
 		)
 	}
 
-	const addPayPalScript = async () => {
-		try {
-			const { data: clientId } = await axios.get('/api/config/paypal');
-			
-			// Xóa script cũ nếu có
-			const existingScript = document.getElementById('paypal-script');
-			if (existingScript) {
-				document.body.removeChild(existingScript);
-			}
-
-			const script = document.createElement('script');
-			script.id = 'paypal-script';
-			script.type = 'text/javascript';
-			script.src = `https://www.paypal.com/sdk/js?client-id=${clientId}&currency=USD`;
-			script.async = true;
-			
-			script.onload = () => {
-				setSdkReady(true);
-				setError(null);
-			};
-
-			script.onerror = (err) => {
-				console.error('PayPal script loading error:', err);
-				setError('Không thể tải PayPal. Vui lòng tải lại trang.');
-				setSdkReady(false);
-			};
-
-			document.body.appendChild(script);
-		} catch (error) {
-			console.error('Error loading PayPal:', error);
-			setError('Không thể kết nối PayPal. Vui lòng kiểm tra kết nối mạng.');
-			setSdkReady(false);
-		}
-	};
-
 	useEffect(() => {
-		if (!order || successPay || order._id !== orderId) {
-			dispatch({ type: ORDER_PAY_RESET });
-			dispatch(getOrderDetails(orderId));
-		} else if (!order.isPaid && !window.paypal) {
-			addPayPalScript();
+		// To get PAYPAL_CLIENT_ID
+		const addPayPalScript = async () => {
+			const { data: clientId } = await axios.get('/api/config/paypal')
+			// Create the script
+			const script = document.createElement('script')
+			script.type = 'text/javascript'
+			script.src = `https://www.paypal.com/sdk/js?client-id=${clientId}`
+			script.async = true
+			script.onload = () => {
+				setSdkReady(true)
+			}
+			document.body.appendChild(script)
 		}
-	}, [dispatch, orderId, successPay, order]);
+
+		if (!order || successPay || successDeliver || order._id !== orderId) {
+			dispatch({ type: ORDER_PAY_RESET })
+			dispatch({ type: ORDER_DELIVER_RESET })
+			dispatch(getOrderDetails(orderId))
+			// if not paid add paypal script
+		} else if (!order.isPaid) {
+			if (!window.paypal) {
+				addPayPalScript()
+			} else {
+				setSdkReady(true)
+			}
+		}
+	}, [dispatch, orderId, successPay, successDeliver, order]) // Dependencies, on change they fire off useEffect
 
 	const successPaymentHandler = (paymentResult) => {
-		console.log('Payment Result:', paymentResult);
-		dispatch(payOrder(orderId, paymentResult));
-	};
+		dispatch(payOrder(orderId, paymentResult))
+	}
 
 	const deliverHandler = () => {
 		dispatch(deliverOrder(order))
@@ -240,13 +223,8 @@ const OrderScreen = ({ match, history }) => {
 										<Loader />
 									) : (
 										<PayPalButton
-											amount={(order.totalPrice / 23000).toFixed(2)}
-											currency="USD"
+											amount={order.totalPrice}
 											onSuccess={successPaymentHandler}
-											onError={(err) => {
-												console.error('PayPal Error:', err);
-												setError('Lỗi thanh toán PayPal');
-											}}
 										/>
 									)}
 								</ListGroup.Item>
