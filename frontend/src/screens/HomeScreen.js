@@ -172,7 +172,7 @@ const HomeScreen = ({ match }) => {
 
       <div className="footer-banner">
         <img
-          src={`${process.env.REACT_APP_API_URL}/images/banner/img-bottom-sinrato1.jpg`}
+          src="https://biti.vn/wp-content/uploads/2022/03/banner-web-Khuyen-mai-mua-hang-online-75.jpg"
           alt="Footer Banner"
           style={{
             width: '100%',
