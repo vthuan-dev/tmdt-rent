@@ -67,3 +67,5 @@ app.listen(
 		`Server running in ${process.env.NODE_ENV} mode on port ${PORT}`.yellow.bold
 	)
 )
+
+app.use('/images', express.static(path.join(__dirname, '/frontend/public/images')));
