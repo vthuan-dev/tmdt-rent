@@ -60,8 +60,9 @@ const updateOrderToPaid = asyncHandler(async (req, res) => {
     const order = await Order.findById(req.params.id);
     
     if (!order) {
-      res.status(404);
-      throw new Error('Order not found');
+      return res.status(404).json({
+        message: 'Không tìm thấy đơn hàng'
+      });
     }
 
     order.isPaid = true;
@@ -74,13 +75,12 @@ const updateOrderToPaid = asyncHandler(async (req, res) => {
     };
 
     const updatedOrder = await order.save();
-    console.log('Order updated successfully:', updatedOrder);
     res.json(updatedOrder);
     
   } catch (error) {
-    console.error('Error updating order:', error);
+    console.error('Payment update error:', error);
     res.status(500).json({
-      message: 'Error updating order to paid status',
+      message: 'Lỗi cập nhật thanh toán',
       error: error.message
     });
   }
@@ -130,7 +130,7 @@ const updateOrderToDelivered = asyncHandler(async (req, res) => {
     res.json(updatedOrder);
   } else {
     res.status(404);
-    throw new Error('Không t��m thấy đơn hàng');
+    throw new Error('Không tìm thấy đơn hàng');
   }
 });
 
