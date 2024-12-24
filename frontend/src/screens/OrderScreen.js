@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import { PayPalButton } from 'react-paypal-button-v2'
 import { Link } from 'react-router-dom'
-import { Button, Row, Col, ListGroup, Image, Card } from 'react-bootstrap'
+import { Button, Row, Col, ListGroup, Image, Card, Spinner } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
 import Message from '../components/Message'
 import Loader from '../components/Loader'
@@ -219,14 +219,39 @@ const OrderScreen = ({ match, history }) => {
 							</ListGroup.Item>
 							{!order.isPaid && order.paymentMethod === 'PayPal' && (
 								<ListGroup.Item>
-									{loadingPay && <Loader />}
-									{!sdkReady ? (
-										<Loader />
-									) : (
+									{(loadingPay || !sdkReady) && (
+										<div style={{
+											textAlign: 'center',
+											margin: 'auto',
+											padding: '20px',
+											display: 'flex',
+											flexDirection: 'column',
+											alignItems: 'center',
+											justifyContent: 'center'
+										}}>
+											<Spinner
+												animation="border"
+												role="status"
+												variant="primary"
+												style={{
+													width: '100px',
+													height: '100px'
+												}}
+											/>
+											<div style={{
+												marginTop: '15px',
+												color: 'var(--bs-primary)',
+												fontSize: '1.2em'
+											}}>
+												<strong>Đang tải...</strong>
+											</div>
+										</div>
+									)}
+									{sdkReady && !loadingPay && (
 										<PayPalButton
-												amount={(order.totalPrice / 23000).toFixed(2)}
-												onSuccess={successPaymentHandler}
-												onError={(err) => console.error('PayPal Error:', err)}
+											amount={(order.totalPrice / 23000).toFixed(2)}
+											onSuccess={successPaymentHandler}
+											onError={(err) => console.error('PayPal Error:', err)}
 										/>
 									)}
 								</ListGroup.Item>
