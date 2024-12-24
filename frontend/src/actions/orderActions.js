@@ -103,43 +103,41 @@ export const payOrder = (orderId, paymentResult) => async (
 	getState
 ) => {
 	try {
-		dispatch({ type: ORDER_PAY_REQUEST })
+		dispatch({
+			type: ORDER_PAY_REQUEST,
+		});
 
-		// Get userInfo from userLogin by destructuring
 		const {
 			userLogin: { userInfo },
-		} = getState()
+		} = getState();
 
 		const config = {
 			headers: {
 				'Content-Type': 'application/json',
 				Authorization: `Bearer ${userInfo.token}`,
 			},
-		}
+		};
 
-		// Make put request to make payment
 		const { data } = await axios.put(
 			`/api/orders/${orderId}/pay`,
 			paymentResult,
 			config
-		)
+		);
 
 		dispatch({
 			type: ORDER_PAY_SUCCESS,
 			payload: data,
-		})
+		});
 	} catch (error) {
 		dispatch({
 			type: ORDER_PAY_FAIL,
 			payload:
-				// Send a custom error message
-				// Else send a generic error message
 				error.response && error.response.data.message
 					? error.response.data.message
 					: error.message,
-		})
+		});
 	}
-}
+};
 // Actions to list my orders
 export const listMyOrders = () => async (dispatch, getState) => {
 	try {

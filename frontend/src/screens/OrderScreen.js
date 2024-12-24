@@ -16,7 +16,7 @@ import {
 	ORDER_DELIVER_RESET,
 } from '../constants/orderConstants'
 
-const OrderScreen = ({ match }) => {
+const OrderScreen = ({ match, history }) => {
 	const orderId = match.params.id
 
 	const [sdkReady, setSdkReady] = useState(false)
@@ -48,10 +48,8 @@ const OrderScreen = ({ match }) => {
 	}
 
 	useEffect(() => {
-		// To get PAYPAL_CLIENT_ID
 		const addPayPalScript = async () => {
 			const { data: clientId } = await axios.get('/api/config/paypal')
-			// Create the script
 			const script = document.createElement('script')
 			script.type = 'text/javascript'
 			script.src = `https://www.paypal.com/sdk/js?client-id=${clientId}`
@@ -66,7 +64,6 @@ const OrderScreen = ({ match }) => {
 			dispatch({ type: ORDER_PAY_RESET })
 			dispatch({ type: ORDER_DELIVER_RESET })
 			dispatch(getOrderDetails(orderId))
-			// if not paid add paypal script
 		} else if (!order.isPaid) {
 			if (!window.paypal) {
 				addPayPalScript()
@@ -74,9 +71,10 @@ const OrderScreen = ({ match }) => {
 				setSdkReady(true)
 			}
 		}
-	}, [dispatch, orderId, successPay, successDeliver, order]) // Dependencies, on change they fire off useEffect
+	}, [dispatch, orderId, successPay, successDeliver, order])
 
 	const successPaymentHandler = (paymentResult) => {
+		console.log(paymentResult)
 		dispatch(payOrder(orderId, paymentResult))
 	}
 
