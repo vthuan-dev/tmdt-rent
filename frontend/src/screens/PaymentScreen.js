@@ -6,7 +6,6 @@ import CheckoutSteps from '../components/CheckoutSteps';
 import { savePaymentMethod } from '../actions/cartActions';
 
 const PaymentScreen = ({ history }) => {
-    // Lấy thông tin giao hàng từ Redux state
     const cart = useSelector((state) => state.cart);
     const { shippingAddress } = cart;
 
@@ -14,9 +13,8 @@ const PaymentScreen = ({ history }) => {
         history.push('/shipping');
     }
 
-    // Phương thức thanh toán mặc định
+    // Chỉ cho phép thanh toán PayPal trong môi trường production
     const [paymentMethod, setPaymentMethod] = useState('PayPal');
-
     const dispatch = useDispatch();
 
     const submitHandler = (e) => {
@@ -27,13 +25,11 @@ const PaymentScreen = ({ history }) => {
 
     return (
         <FormContainer>
-            {/* Bước thanh toán */}
             <CheckoutSteps step1 step2 step3 />
             <h1 className="text-center">Phương Thức Thanh Toán</h1>
 
             <Card className="shadow-lg p-4 mt-4 rounded">
                 <Form onSubmit={submitHandler}>
-                    {/* Chọn phương thức thanh toán */}
                     <Form.Group>
                         <Form.Label as="legend" className="mb-4">
                             Vui Lòng Chọn Phương Thức Thanh Toán
@@ -44,7 +40,11 @@ const PaymentScreen = ({ history }) => {
                                 type="radio"
                                 label={
                                     <>
-                                        <i className="fab fa-paypal text-primary"></i> PayPal hoặc Thẻ Tín Dụng
+                                        <i className="fab fa-paypal text-primary"></i>{' '}
+                                        PayPal hoặc Thẻ Tín Dụng{' '}
+                                        <small className="text-muted">
+                                            (Recommended)
+                                        </small>
                                     </>
                                 }
                                 id="PayPal"
@@ -54,40 +54,52 @@ const PaymentScreen = ({ history }) => {
                                 onChange={(e) => setPaymentMethod(e.target.value)}
                                 className="mb-3"
                             />
-                            {/* Momo */}
-                            <Form.Check
-                                type="radio"
-                                label={
-                                    <>
-                                        <i className="fas fa-mobile-alt text-success"></i> Ví Momo
-                                    </>
-                                }
-                                id="Momo"
-                                name="paymentMethod"
-                                value="Momo"
-                                onChange={(e) => setPaymentMethod(e.target.value)}
-                                className="mb-3"
-                            />
-                            {/* Thanh toán khi nhận hàng */}
-                            <Form.Check
-                                type="radio"
-                                label={
-                                    <>
-                                        <i className="fas fa-hand-holding-usd text-warning"></i> Thanh Toán Khi Nhận Hàng
-                                    </>
-                                }
-                                id="COD"
-                                name="paymentMethod"
-                                value="COD"
-                                onChange={(e) => setPaymentMethod(e.target.value)}
-                            />
+
+                            {/* Tạm thời ẩn các phương thức thanh toán khác trong production */}
+                            {process.env.NODE_ENV === 'development' && (
+                                <>
+                                    {/* Momo */}
+                                    <Form.Check
+                                        type="radio"
+                                        label={
+                                            <>
+                                                <i className="fas fa-mobile-alt text-success"></i> Ví Momo
+                                            </>
+                                        }
+                                        id="Momo"
+                                        name="paymentMethod"
+                                        value="Momo"
+                                        onChange={(e) => setPaymentMethod(e.target.value)}
+                                        className="mb-3"
+                                        disabled
+                                    />
+                                    {/* Thanh toán khi nhận hàng */}
+                                    <Form.Check
+                                        type="radio"
+                                        label={
+                                            <>
+                                                <i className="fas fa-hand-holding-usd text-warning"></i> Thanh Toán Khi Nhận Hàng
+                                            </>
+                                        }
+                                        id="COD"
+                                        name="paymentMethod"
+                                        value="COD"
+                                        onChange={(e) => setPaymentMethod(e.target.value)}
+                                        disabled
+                                    />
+                                </>
+                            )}
                         </Col>
                     </Form.Group>
 
-                    {/* Nút tiếp tục */}
                     <Row className="text-center mt-4">
                         <Col>
-                            <Button type="submit" variant="success" size="lg" className="rounded">
+                            <Button 
+                                type="submit" 
+                                variant="success" 
+                                size="lg" 
+                                className="rounded"
+                            >
                                 Tiếp Tục
                             </Button>
                         </Col>
